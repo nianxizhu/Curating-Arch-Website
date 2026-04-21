@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 160" width="220" height="160">
+  <rect width="220" height="160" fill="#bfb7a8"/>
+  <rect x="8" y="8" width="204" height="144" fill="none" stroke="#2d2a24" stroke-width="1"/>
+  <g opacity="0.6">
+    <rect x="633" y="374" width="10" height="2" fill="#1c1a18" opacity="0.10"/>
+    <rect x="78" y="78" width="16" height="1" fill="#1c1a18" opacity="0.12"/>
+    <rect x="847" y="588" width="4" height="2" fill="#1c1a18" opacity="0.10"/>
+    <rect x="913" y="254" width="3" height="1" fill="#1c1a18" opacity="0.05"/>
+    <rect x="350" y="454" width="6" height="2" fill="#1c1a18" opacity="0.05"/>
+    <rect x="417" y="435" width="3" height="2" fill="#1c1a18" opacity="0.06"/>
+    <rect x="569" y="421" width="2" height="2" fill="#1c1a18" opacity="0.05"/>
+    <rect x="41" y="67" width="7" height="1" fill="#1c1a18" opacity="0.05"/>
+    <rect x="412" y="287" width="5" height="1" fill="#1c1a18" opacity="0.06"/>
+    <rect x="141" y="433" width="4" height="1" fill="#1c1a18" opacity="0.02"/>
+    <rect x="748" y="140" width="17" height="1" fill="#1c1a18" opacity="0.08"/>
+    <rect x="866" y="509" width="19" height="1" fill="#1c1a18" opacity="0.09"/>
+    <rect x="164" y="59" width="7" height="2" fill="#1c1a18" opacity="0.11"/>
+    <rect x="146" y="554" width="13" height="2" fill="#1c1a18" opacity="0.09"/>
+    <rect x="229" y="298" width="11" height="1" fill="#1c1a18" opacity="0.08"/>
+    <rect x="348" y="579" width="20" height="2" fill="#1c1a18" opacity="0.06"/>
+    <rect x="488" y="518" width="14" height="1" fill="#1c1a18" opacity="0.04"/>
+    <rect x="305" y="448" width="11" height="1" fill="#1c1a18" opacity="0.14"/>
+    <rect x="367" y="579" width="4" height="2" fill="#1c1a18" opacity="0.07"/>
+    <rect x="906" y="338" width="10" height="1" fill="#1c1a18" opacity="0.07"/>
+    <rect x="77" y="568" width="18" height="1" fill="#1c1a18" opacity="0.06"/>
+    <rect x="801" y="405" width="11" height="2" fill="#1c1a18" opacity="0.13"/>
+    <rect x="692" y="602" width="9" height="1" fill="#1c1a18" opacity="0.13"/>
+    <rect x="872" y="41" width="15" height="1" fill="#1c1a18" opacity="0.11"/>
+    <rect x="111" y="104" width="2" height="2" fill="#1c1a18" opacity="0.12"/>
+    <rect x="407" y="190" width="10" height="1" fill="#1c1a18" opacity="0.14"/>
+    <rect x="31" y="291" width="18" height="1" fill="#1c1a18" opacity="0.09"/>
+    <rect x="713" y="37" width="7" height="2" fill="#1c1a18" opacity="0.06"/>
+    <rect x="475" y="217" width="20" height="1" fill="#1c1a18" opacity="0.14"/>
+    <rect x="192" y="364" width="9" height="1" fill="#1c1a18" opacity="0.05"/>
+    <rect x="190" y="33" width="20" height="2" fill="#1c1a18" opacity="0.08"/>
+    <rect x="769" y="333" width="21" height="1" fill="#1c1a18" opacity="0.13"/>
+    <rect x="452" y="473" width="12" height="2" fill="#1c1a18" opacity="0.08"/>
+    <rect x="663" y="581" width="20" height="1" fill="#1c1a18" opacity="0.03"/>
+    <rect x="874" y="353" width="7" height="2" fill="#1c1a18" opacity="0.10"/>
+  </g>
+  <g transform="translate(110, 80)" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">
+    <text font-size="10" letter-spacing="3" fill="#7e7568" y="-4">ALT 1</text>
+    <text font-size="14" font-weight="700" fill="#1c1a18" y="14">02.1</text>
+  </g>
+</svg>
