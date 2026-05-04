@@ -85,6 +85,14 @@ export default function Menu() {
           >
             <nav className="flex flex-col">
               <a
+                href="/"
+                onClick={go("/")}
+                className="group flex items-center justify-between px-5 py-3 text-[13px] font-bold tracking-[0.3em] text-[var(--color-ink)] hover:text-[var(--color-accent)]"
+              >
+                <span>HOME</span>
+                <span className="opacity-0 transition-opacity group-hover:opacity-100">→</span>
+              </a>
+              <a
                 href="/queue"
                 onClick={go("/queue")}
                 className="group flex items-center justify-between px-5 py-3 text-[13px] font-bold tracking-[0.3em] text-[var(--color-ink)] hover:text-[var(--color-accent)]"
@@ -98,14 +106,6 @@ export default function Menu() {
                 className="group flex items-center justify-between px-5 py-3 text-[13px] font-bold tracking-[0.3em] text-[var(--color-ink)] hover:text-[var(--color-accent)]"
               >
                 <span>HOLD</span>
-                <span className="opacity-0 transition-opacity group-hover:opacity-100">→</span>
-              </a>
-              <a
-                href="/"
-                onClick={go("/")}
-                className="group flex items-center justify-between px-5 py-3 text-[13px] font-bold tracking-[0.3em] text-[var(--color-ink)] hover:text-[var(--color-accent)]"
-              >
-                <span>HOME</span>
                 <span className="opacity-0 transition-opacity group-hover:opacity-100">→</span>
               </a>
             </nav>

@@ -57,12 +57,11 @@ export default function LoadingTransitionProvider({ children }) {
             </div>
             <div className="flex min-h-screen items-center justify-center">
               <PixelProgressBar
-                variant="segments"
-                segments={5}
+                variant="smooth"
                 duration={1.4}
                 label="LOADING…"
-                width={170}
-                height={22}
+                width={260}
+                height={20}
               />
             </div>
           </motion.div>

@@ -2,16 +2,16 @@
 
 import { useLoadingTransition } from "./LoadingTransition";
 
-export default function ArtifactNav({ prev, next }) {
+export default function ArtifactNav({ prevHref, nextHref, nextLabel }) {
   const { navigate } = useLoadingTransition();
 
   return (
     <>
-      {prev ? (
+      {prevHref ? (
         <button
           type="button"
-          aria-label={`Previous artifact (${prev})`}
-          onClick={() => navigate(`/queue/${prev}`)}
+          aria-label="Previous artifact"
+          onClick={() => navigate(prevHref)}
           className="fixed left-6 top-1/2 z-20 -translate-y-1/2 font-mono text-[42px] font-light text-[var(--color-mute)] transition-colors duration-700 hover:text-[var(--color-accent)]"
         >
           ‹
@@ -24,11 +24,11 @@ export default function ArtifactNav({ prev, next }) {
           ‹
         </span>
       )}
-      {next ? (
+      {nextHref ? (
         <button
           type="button"
-          aria-label={`Next artifact (${next})`}
-          onClick={() => navigate(`/queue/${next}`)}
+          aria-label={nextLabel || "Next artifact"}
+          onClick={() => navigate(nextHref)}
           className="fixed right-6 top-1/2 z-20 -translate-y-1/2 font-mono text-[42px] font-light text-[var(--color-mute)] transition-colors duration-700 hover:text-[var(--color-accent)]"
         >
           ›

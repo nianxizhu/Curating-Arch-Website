@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import PixelProgressBar from "./PixelProgressBar";
 
@@ -39,7 +39,8 @@ export default function HoldEssay({ title, subtitle, paragraphs }) {
   const total = paragraphs.length;
   const [revealed, setRevealed] = useState(0);
   const [loading, setLoading] = useState(false);
-  const paragraphsRef = useRef(null);
+  const paragraphRefs = useRef([]);
+  const lastScrolledIndex = useRef(-1);
 
   const started = revealed > 0;
   const done = revealed >= total;
@@ -50,52 +51,41 @@ export default function HoldEssay({ title, subtitle, paragraphs }) {
   };
 
   const handleComplete = () => {
-    const wasZero = revealed === 0;
     setRevealed((v) => Math.min(total, v + 1));
     setLoading(false);
-    if (wasZero) {
-      setTimeout(() => {
-        paragraphsRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 120);
-    }
   };
+
+  useEffect(() => {
+    if (revealed === 0) return;
+    const newIndex = revealed - 1;
+    if (newIndex === lastScrolledIndex.current) return;
+    lastScrolledIndex.current = newIndex;
+
+    const id = setTimeout(() => {
+      const target = paragraphRefs.current[newIndex];
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 120);
+    return () => clearTimeout(id);
+  }, [revealed]);
 
   return (
     <>
       <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.4 }}
-          className="font-mono text-[11px] tracking-[0.35em] text-[var(--color-accent)]"
-        >
-          {title}
-        </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.6, delay: 0.2, ease: [0.32, 0.08, 0.24, 1] }}
-          className="mt-6 max-w-3xl font-sans text-[44px] font-extrabold leading-[1.1] tracking-[-0.01em] text-[var(--color-ink)] md:text-[56px]"
+          className="font-sans text-[56px] font-extrabold tracking-[-0.01em] text-[var(--color-ink)] md:text-[72px]"
         >
-          {subtitle}
+          {title}
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 1 }}
-          className="mt-14 font-mono text-[10px] tracking-[0.3em] text-[var(--color-mute)]"
-        >
-          ONE PARAGRAPH AT A TIME.
-        </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.6, delay: 1.6, ease: [0.32, 0.08, 0.24, 1] }}
-          className="mt-10 flex min-h-[60px] items-center justify-center"
+          transition={{ duration: 1.6, delay: 0.8, ease: [0.32, 0.08, 0.24, 1] }}
+          className="mt-14 flex min-h-[60px] items-center justify-center"
         >
           {!started ? (
             loading ? (
@@ -121,11 +111,14 @@ export default function HoldEssay({ title, subtitle, paragraphs }) {
         </motion.div>
       </section>
 
-      <div ref={paragraphsRef} className="mx-auto max-w-2xl px-6 pb-40 pt-20">
+      <div className="mx-auto max-w-2xl px-6 pb-40 pt-20">
         <div className="space-y-14">
           {paragraphs.slice(0, revealed).map((p, i) => (
             <motion.p
               key={i}
+              ref={(el) => {
+                paragraphRefs.current[i] = el;
+              }}
               initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 1.4, ease: [0.32, 0.08, 0.24, 1] }}
