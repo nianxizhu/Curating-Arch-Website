@@ -34,8 +34,7 @@ export default function WaitingSymbol({ href = "/queue" }) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.6, delay: 0.6, ease: [0.32, 0.08, 0.24, 1] }}
-      className="flex flex-col items-center"
-      style={{ width: 360 }}
+      className="flex w-[300px] flex-col items-center md:w-[360px]"
     >
       <div
         aria-hidden="true"

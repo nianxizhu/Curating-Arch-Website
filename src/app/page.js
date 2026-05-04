@@ -23,7 +23,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.6, delay: 0.3, ease: [0.32, 0.08, 0.24, 1] }}
-          className="font-sans text-[56px] font-extrabold tracking-[-0.01em] text-[var(--color-ink)] md:text-[72px]"
+          className="text-center font-sans text-[40px] font-extrabold tracking-[-0.01em] text-[var(--color-ink)] sm:text-[56px] md:text-[72px]"
         >
           TERMS OF ENTRY
         </motion.h1>

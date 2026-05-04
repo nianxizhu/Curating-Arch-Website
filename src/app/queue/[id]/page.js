@@ -37,14 +37,14 @@ export default function ArtifactPage({ params }) {
     : null;
 
   return (
-    <main className="relative flex min-h-screen flex-col justify-center bg-[var(--color-ground)] px-24 py-16">
+    <main className="relative flex min-h-screen flex-col justify-center bg-[var(--color-ground)] px-5 py-10 md:px-24 md:py-16">
       <ArtifactNav
         prevHref={prevHref}
         nextHref={nextHref}
         nextLabel={nextLabel}
       />
 
-      <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-16 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:items-center">
+      <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:items-center md:gap-16">
         <motion.div
           key={activeImage}
           initial={{ opacity: 0 }}
@@ -65,7 +65,7 @@ export default function ArtifactPage({ params }) {
                 <button
                   type="button"
                   onClick={() => setVideoPlaying(true)}
-                  aria-label={`Play video — ${artifact.title}`}
+                  aria-label={`Play video — ${artifact.title}. ${artifact.altText}`}
                   className="group relative inline-block"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -128,7 +128,7 @@ export default function ArtifactPage({ params }) {
           transition={{ duration: 1.4, delay: 0.4, ease: [0.32, 0.08, 0.24, 1] }}
           className="pt-2"
         >
-          <h1 className="break-words font-sans text-[34px] font-extrabold uppercase leading-[1.05] tracking-[-0.01em] text-[var(--color-accent)]">
+          <h1 className="break-words font-sans text-[26px] font-extrabold uppercase leading-[1.05] tracking-[-0.01em] text-[var(--color-accent)] md:text-[34px]">
             {artifact.title}
           </h1>
 

@@ -11,13 +11,13 @@ export default function QueuePage() {
         initial={{ opacity: 0, x: -16 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, ease: [0.32, 0.08, 0.24, 1] }}
-        className="px-10 font-sans text-[64px] font-extrabold tracking-[-0.02em] text-[var(--color-ink)]"
+        className="px-6 font-sans text-[40px] font-extrabold tracking-[-0.02em] text-[var(--color-ink)] md:px-10 md:text-[64px]"
       >
         QUEUE
       </motion.h1>
 
       <div className="no-scrollbar overflow-x-auto overflow-y-hidden">
-        <div className="flex gap-10 px-10">
+        <div className="flex gap-6 px-6 md:gap-10 md:px-10">
           {artifacts.map((artifact) => (
             <QueueCard
               key={artifact.id}
