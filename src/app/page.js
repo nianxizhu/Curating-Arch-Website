@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import BackgroundTicker from "./components/BackgroundTicker";
-import Chair from "./components/Chair";
+import WaitingSymbol from "./components/WaitingSymbol";
 
 export default function Home() {
   return (
@@ -28,17 +28,17 @@ export default function Home() {
           TERMS OF ENTRY
         </motion.h1>
 
-        <div className="my-10">
-          <Chair />
+        <div className="my-8">
+          <WaitingSymbol href="/queue" />
         </div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.8, delay: 1.2 }}
-          className="text-center font-sans text-[12px] font-medium tracking-[0.28em] text-[var(--color-ink)]"
+          className="text-center font-sans text-[12px] font-bold tracking-[0.28em] text-[var(--color-ink)]"
         >
-          ARCHITECTURES OF ANTICIPATION IN NEW YORK CITY
+          ARCHITECTURES OF WAITING
         </motion.p>
       </div>
     </main>

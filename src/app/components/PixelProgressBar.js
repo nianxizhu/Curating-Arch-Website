@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function PixelProgressBar({
   variant = "segments",
@@ -12,16 +12,26 @@ export default function PixelProgressBar({
   height = 18,
   className = "",
   onComplete,
+  indefinite = false,
 }) {
   const controlled = typeof progress === "number";
   const [value, setValue] = useState(controlled ? progress : 0);
 
+  const onCompleteRef = useRef(onComplete);
   useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
+
+  // RAF only used for segments variant with duration (so segments fill stepwise).
+  // Smooth variant with duration uses a CSS animation (loading-complete) instead.
+  useEffect(() => {
+    if (indefinite) return;
     if (controlled) {
       setValue(progress);
       return;
     }
     if (typeof duration !== "number") return;
+    if (variant !== "segments") return;
     const start = performance.now();
     let raf;
     const tick = (now) => {
@@ -29,22 +39,31 @@ export default function PixelProgressBar({
       setValue(t);
       if (t < 1) {
         raf = requestAnimationFrame(tick);
-      } else if (onComplete) {
-        onComplete();
+      } else if (onCompleteRef.current) {
+        onCompleteRef.current();
       }
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [controlled, progress, duration, onComplete]);
+  }, [variant, controlled, progress, duration, indefinite]);
 
   const clamped = Math.max(0, Math.min(1, value));
+
+  const handleAnimationEnd = (e) => {
+    if (
+      e.animationName === "loading-complete-anim" &&
+      onCompleteRef.current
+    ) {
+      onCompleteRef.current();
+    }
+  };
 
   if (variant === "segments") {
     const filled = Math.floor(clamped * segments);
     return (
       <div className={`inline-flex flex-col items-center ${className}`}>
         <div
-          className="inline-flex items-center gap-[3px] border-2 border-[var(--color-ink)] bg-[var(--color-ground)] px-[3px] py-[3px]"
+          className="inline-flex items-center gap-[3px] rounded-md border-2 border-[var(--color-ink)] bg-[var(--color-ground)] px-[3px] py-[3px]"
           style={{ width, height }}
           role="progressbar"
           aria-valuenow={Math.round(clamped * 100)}
@@ -54,7 +73,7 @@ export default function PixelProgressBar({
           {Array.from({ length: segments }).map((_, i) => (
             <div
               key={i}
-              className="flex-1 h-full transition-[background] duration-300"
+              className="h-full flex-1 rounded-[2px] transition-[background] duration-300"
               style={{
                 background:
                   i < filled ? "var(--color-ink)" : "transparent",
@@ -71,20 +90,34 @@ export default function PixelProgressBar({
     );
   }
 
+  // Smooth variant
+  const isCssAnimated =
+    !indefinite && !controlled && typeof duration === "number";
+
   return (
     <div className={`inline-flex flex-col ${className}`}>
       <div
-        className="border-2 border-[var(--color-accent)] bg-[var(--color-ground)]"
+        className="overflow-hidden rounded-[3px] border-2 border-[var(--color-accent)] bg-[var(--color-ground)]"
         style={{ width, height }}
         role="progressbar"
-        aria-valuenow={Math.round(clamped * 100)}
+        aria-valuenow={indefinite || isCssAnimated ? undefined : Math.round(clamped * 100)}
         aria-valuemin={0}
         aria-valuemax={100}
       >
-        <div
-          className="h-full bg-[var(--color-accent)]"
-          style={{ width: `${clamped * 100}%`, transition: "width 300ms linear" }}
-        />
+        {indefinite ? (
+          <div className="loading-loop h-full bg-[var(--color-accent)]" />
+        ) : isCssAnimated ? (
+          <div
+            className="loading-complete h-full bg-[var(--color-accent)]"
+            style={{ animationDuration: `${duration}s` }}
+            onAnimationEnd={handleAnimationEnd}
+          />
+        ) : (
+          <div
+            className="h-full bg-[var(--color-accent)]"
+            style={{ width: `${clamped * 100}%`, transition: "width 300ms linear" }}
+          />
+        )}
       </div>
       {label ? (
         <span className="mt-1 font-mono text-[10px] tracking-[0.25em] text-[var(--color-accent)]">

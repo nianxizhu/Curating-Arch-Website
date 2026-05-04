@@ -1,7 +1,6 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Menu from "./components/Menu";
-import PersistentWaitingUI from "./components/PersistentWaitingUI";
 import LoadingTransitionProvider from "./components/LoadingTransition";
 
 const mono = JetBrains_Mono({
@@ -22,7 +21,6 @@ export default function RootLayout({ children }) {
         <LoadingTransitionProvider>
           {children}
           <Menu />
-          <PersistentWaitingUI />
         </LoadingTransitionProvider>
       </body>
     </html>

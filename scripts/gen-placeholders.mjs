@@ -26,49 +26,77 @@ const palettes = {
   blueprint: { bg: "#2b496d", ink: "#e4eef7", frame: "#c7d9ec", accent: "#7fa8cd" },
 };
 
-function noiseRects(palette, n = 60) {
+function noiseRects(palette, w, h, n = 120) {
   const rects = [];
   for (let i = 0; i < n; i++) {
-    const x = Math.floor(Math.random() * 900) + 30;
-    const y = Math.floor(Math.random() * 600) + 30;
-    const w = Math.floor(Math.random() * 20) + 2;
-    const h = Math.floor(Math.random() * 2) + 1;
+    const x = Math.floor(Math.random() * (w - 60)) + 30;
+    const y = Math.floor(Math.random() * (h - 60)) + 30;
+    const rw = Math.floor(Math.random() * 20) + 2;
+    const rh = Math.floor(Math.random() * 2) + 1;
     const o = (Math.random() * 0.12 + 0.02).toFixed(2);
     rects.push(
-      `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${palette.ink}" opacity="${o}"/>`
+      `<rect x="${x}" y="${y}" width="${rw}" height="${rh}" fill="${palette.ink}" opacity="${o}"/>`
     );
   }
   return rects.join("\n    ");
 }
 
-function mainSvg(item, w = 960, h = 660) {
+function wrapLabel(label, maxChars = 18) {
+  const words = label.split(/\s+/);
+  const lines = [];
+  let line = "";
+  for (const word of words) {
+    if (!line) {
+      line = word;
+    } else if ((line + " " + word).length <= maxChars) {
+      line += " " + word;
+    } else {
+      lines.push(line);
+      line = word;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+function mainSvg(item, w = 480, h = 600) {
   const p = palettes[item.tone];
+  const lines = wrapLabel(item.label, 18);
+  const lineHeight = 32;
+  const totalH = lines.length * lineHeight;
+  const startY = h / 2 - totalH / 2 + 8;
+  const lineNodes = lines
+    .map(
+      (ln, i) =>
+        `<text font-size="26" font-weight="800" fill="${p.ink}" letter-spacing="-0.5" x="0" y="${i * lineHeight}">${ln}</text>`
+    )
+    .join("\n      ");
+
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-label="${item.label} placeholder">
   <rect width="${w}" height="${h}" fill="${p.bg}"/>
-  <rect x="20" y="20" width="${w - 40}" height="${h - 40}" fill="none" stroke="${p.frame}" stroke-width="2"/>
+  <rect x="16" y="16" width="${w - 32}" height="${h - 32}" fill="none" stroke="${p.frame}" stroke-width="2"/>
   <g opacity="0.7">
-    ${noiseRects(p, 120)}
+    ${noiseRects(p, w, h, 100)}
   </g>
-  <g transform="translate(${w / 2}, ${h / 2 - 30})" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">
-    <text font-size="14" letter-spacing="6" fill="${p.accent}" y="-40">ARTIFACT ${String(item.id).padStart(2, "0")}</text>
-    <text font-size="42" font-weight="800" fill="${p.ink}" y="10" letter-spacing="-0.5">${item.label}</text>
-    <text font-size="14" fill="${p.accent}" y="50" letter-spacing="3">${item.sub}</text>
+  <g text-anchor="middle" font-family="Helvetica, Arial, sans-serif">
+    <text font-size="11" letter-spacing="5" fill="${p.accent}" x="${w / 2}" y="${startY - 36}">ARTIFACT ${String(item.id).padStart(2, "0")}</text>
+    <g transform="translate(${w / 2}, ${startY})">
+      ${lineNodes}
+    </g>
+    <text font-size="11" letter-spacing="3" fill="${p.accent}" x="${w / 2}" y="${startY + totalH + 22}">${item.sub}</text>
   </g>
-  <g transform="translate(${w / 2}, ${h - 60})" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">
-    <text font-size="10" letter-spacing="4" fill="${p.frame}" opacity="0.6">PLACEHOLDER</text>
-  </g>
+  <text x="${w / 2}" y="${h - 30}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" letter-spacing="4" fill="${p.frame}" opacity="0.6">PLACEHOLDER</text>
 </svg>
 `;
 }
 
 function thumbSvg(item, variant, w = 220, h = 160) {
   const p = palettes[item.tone];
-  const shift = variant * 7;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
   <rect width="${w}" height="${h}" fill="${p.bg}"/>
   <rect x="8" y="8" width="${w - 16}" height="${h - 16}" fill="none" stroke="${p.frame}" stroke-width="1"/>
   <g opacity="0.6">
-    ${noiseRects(p, 35)}
+    ${noiseRects(p, w, h, 35)}
   </g>
   <g transform="translate(${w / 2}, ${h / 2})" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">
     <text font-size="10" letter-spacing="3" fill="${p.accent}" y="-4">ALT ${variant}</text>

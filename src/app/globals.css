@@ -99,3 +99,34 @@ a {
   mask-image: linear-gradient(to bottom, rgb(0 0 0) 55%, rgb(0 0 0 / 0.25) 85%, rgb(0 0 0 / 0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0) 55%, rgb(0 0 0 / 0.25) 85%, rgb(0 0 0 / 0) 100%);
 }
+
+@keyframes loading-slow {
+  0% { width: 0%; }
+  15% { width: 38%; }
+  35% { width: 64%; }
+  65% { width: 82%; }
+  100% { width: 94%; }
+}
+
+.loading-loop {
+  animation: loading-slow 90s cubic-bezier(0.16, 0.7, 0.4, 1) forwards;
+}
+
+@keyframes loading-complete-anim {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.loading-complete {
+  animation-name: loading-complete-anim;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

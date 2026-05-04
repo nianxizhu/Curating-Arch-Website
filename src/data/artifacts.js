@@ -1,147 +1,165 @@
 export const artifacts = [
   {
     id: 1,
-    slug: "plans-to-relieve-congestion",
-    title: "\"Plans to Relieve Congestion at Broadway\"",
-    attribution: "New York Times, January 8, 1911.",
-    image: "/artifacts/01-main.svg",
-    thumbnails: ["/artifacts/01-alt-1.svg", "/artifacts/01-alt-2.svg"],
+    slug: "boy-on-a-crumbling-stoop",
+    title: "Boy on a Crumbling Stoop",
+    attribution:
+      "Arnold Eagle. Photograph, 1935. Museum of the City of New York, 43.131.11.154.",
+    image: "/artifacts/boy-on-a-crumbling-stoop.png",
+    thumbnails: [],
     description:
-      "A 1911 newspaper plan for decongesting lower Manhattan maps the city as a problem of flow — bodies backed up at street corners, streetcars piling on narrow intersections. The proposal treats waiting as a pathology to be engineered out, rather than a condition to be lived with. It is one of the earliest visions of New York as a circulatory system, where delay signals failure and speed signals health. [Placeholder — replace with final 100-word text.]",
+      "Arnold Eagle’s mid-1930s Lower East Side photographs, from One Third of the Nation, document New York slum conditions during the Depression. His series of images of people sitting on steps is powerful because Eagle shows poverty as a condition of waiting and public idleness. The tenement street begins to function as an extension of domestic space because private interiors are crowded and limited. The stoop reflects a scarcity not only of money, but also of privacy. Through this series of photographs, Eagle documents how domestic life unfolds for the working class under conditions of spatial constraint. The stillness of the figures also suggests exclusion from New York’s promise of speed and, by extension, prosperity.",
     altText:
-      "A detailed aerial diagram of lower Manhattan published in The New York Times in 1911, showing proposed boulevards intersecting the existing grid. The drawing is ink on aged newsprint, with streets and new avenues overlaid in darker lines. [Placeholder.]",
+      "A 1935 black-and-white photograph by Arnold Eagle showing a boy seated on the worn stone stoop of a Lower East Side tenement, an extension of crowded domestic life onto the public street.",
   },
   {
     id: 2,
-    slug: "ellis-island-registry",
-    title: "Registry Room, Ellis Island",
-    attribution: "Detroit Publishing Co., c. 1905.",
-    image: "/artifacts/02-main.svg",
-    thumbnails: ["/artifacts/02-alt-1.svg", "/artifacts/02-alt-2.svg"],
+    slug: "free-waiting",
+    title: "Free Waiting",
+    attribution:
+      "Clyde Dorsett. Ink on paper (photocopy), undated. Avery Drawings & Archives, Columbia University.",
+    image: "/artifacts/free-waiting.png",
+    thumbnails: [],
     description:
-      "The Great Hall at Ellis Island was a room built to hold waiting bodies in formation. Its pens and rails sorted immigrants into queues long before any officer asked a question. The architecture pre-processes; the inspector confirms. To wait here was to be legible to the state before you had spoken. [Placeholder — replace with final 100-word text.]",
+      "Clyde Dorsett writes about the idea of “free waiting” as a design approach to institutional space. Dorsett does not see the waiting area as neutral, but instead emphasizes its importance by showing how it can shape a person’s emotional state upon entering a facility. In the piece, he describes waiting as something that can produce boredom, anxiety, and even a “deadening effect” when people are confined to narrow, controlled spaces where their only function is to remain available. His proposal for larger open areas, activity, reading material, and exhibits suggests that design plays an important role in shaping the experience of waiting, and that it can either deny or offer comfort and dignity.",
     altText:
-      "Interior photograph of the Registry Room at Ellis Island circa 1905, showing long wooden benches arranged in parallel rows with iron railings forming narrow lanes. Dozens of immigrants in dark coats and hats fill the benches and aisles. [Placeholder.]",
+      "Clyde Dorsett’s undated ink-on-paper diagram outlining the design concept of “free waiting,” showing layouts and spatial proposals for institutional waiting areas.",
   },
   {
     id: 3,
-    slug: "guggenheim-reception",
-    title: "Guggenheim Reception",
+    slug: "social-life-of-small-urban-spaces",
+    title: "The Social Life of Small Urban Spaces",
     attribution:
-      "Frank Lloyd Wright, Reception and Café Waiting Area, Solomon R. Guggenheim Museum, 1943–1956. Avery Library, Columbia.",
-    image: "/artifacts/03-main.svg",
-    thumbnails: ["/artifacts/03-alt-1.svg", "/artifacts/03-alt-2.svg"],
+      "William H. Whyte. Documentary footage, 1980. Municipal Art Society of New York.",
+    image: "/artifacts/city-spaces-1.png",
+    thumbnails: [
+      "/artifacts/city-spaces-2.png",
+      "/artifacts/city-spaces-3.png",
+    ],
+    videoUrl: "https://www.dailymotion.com/video/x8mpdo3",
     description:
-      "The Upper East Side was becoming Museum Mile precisely as Black residents were being redlined out of its adjacent blocks. Wright's café drawings project a visitor who already has the leisure to be there — who has passed, silently, through a dozen filters before entering the building. The seating plan is the end of a long queue the drawing does not show. [Placeholder.]",
+      "When movement is no longer required, what holds a body in place? The conditions that sustain stillness in New York begin to register in ways that are less visible, but no less structured.. William H. Whyte’s footage isolates moments when people are neither arriving nor leaving. Even a set of repeated, simple behaviors like sitting at edges, or adjusting position, or watching others, suggest that waiting is structured through the spatial conditions of the plaza itself. In City Spaces, Human Places, it is stated that “The number one activity [of waiting] is people looking at other people. And it is often an aspect of design that is severely overlooked.” Whyte’s research reframes these scenes as evidence rather than background. Attention becomes a form of occupation, a resource that is very much distributed unevenly by design. In contrast to institutional waiting spaces that confine and direct bodies, the plaza produces a looser condition where people negotiate how long they wait and where they position themselves. The footage makes clear that waiting is reorganized, shaped by design, and tied to the presence of others.",
     altText:
-      "Pencil architectural drawing of the Guggenheim Museum reception area by Frank Lloyd Wright, showing curved interior spaces with oval seating clusters and planters. Visitors are rendered as small silhouettes scattered across the floor. [Placeholder.]",
+      "Still from William H. Whyte’s 1980 documentation of small urban plazas in New York, showing people sitting, watching, and adjusting position as they linger in a public square.",
   },
   {
     id: 4,
-    slug: "subway-turnstile-patent",
-    title: "Subway Turnstile Patent Drawing",
-    attribution: "U.S. Patent Office, 1928.",
-    image: "/artifacts/04-main.svg",
-    thumbnails: ["/artifacts/04-alt-1.svg", "/artifacts/04-alt-2.svg"],
+    slug: "philharmonic-hall",
+    title: "Philharmonic Hall",
+    attribution:
+      "Harrison & Abramovitz, drafted by H. Blake-Smith. Perspective rendering of lobby, undated. Avery Drawings & Archives, Columbia University.",
+    image: "/artifacts/philharmonic-hall.png",
+    thumbnails: [],
     description:
-      "The turnstile is a machine for converting a crowd into a single file. Its patented geometry assumes a body of a certain height, a hand of a certain grip, a coin of a certain denomination. Every refusal at its arm is a design decision made decades in advance. [Placeholder.]",
+      "This rendering presents the lobby of Philharmonic Hall not simply as a place to wait, but as a stage for elite public life. The building was part of a larger performing arts complex designed by Max Abramovitz for Lincoln Center’s original 1962 concert hall. The lobby’s polish and openness suggest that the people occupying it are not just delayed visitors, but socially significant patrons whose presence is itself part of the performance. Unlike an ordinary waiting room, which manages bodies through compression and control, the Philharmonic Hall lobby seems to provide room for visibility and circulation. The lobby is an architectural extension of Lincoln Center’s public image with prestige.",
     altText:
-      "Technical patent drawing from 1928 showing a mechanical turnstile in plan, elevation, and section. Rotating tri-arm mechanism is visible with dimension lines and patent claim annotations. [Placeholder.]",
+      "Architectural perspective rendering of the Philharmonic Hall lobby at Lincoln Center, drafted by H. Blake-Smith for Harrison & Abramovitz, depicting an open and polished modernist concert hall foyer.",
   },
   {
     id: 5,
-    slug: "tenement-stoop",
-    title: "Tenement Stoop, Lower East Side",
-    attribution: "Jacob Riis, c. 1890.",
-    image: "/artifacts/05-main.svg",
-    thumbnails: ["/artifacts/05-alt-1.svg"],
+    slug: "childrens-playground-ellis-island",
+    title: "Children’s Playground on Ellis Island",
+    attribution:
+      "Jacob A. Riis. Photograph, c. 1900. Museum of the City of New York, 90.13.3.99.",
+    image: "/artifacts/childrens-playground-ellis-island.png",
+    thumbnails: [],
     description:
-      "The stoop was a room for people who had no room. To wait on one was to negotiate a space with neither the privacy of home nor the anonymity of the street. Riis's photographs preserve a waiting that was not queueing but dwelling — a form of time made of narrow frontage. [Placeholder.]",
+      "This photograph captures a waiting space designed for the children of immigrants held at Ellis Island while their families were being processed or detained. At first, the image gives the impression of freedom and openness because the children are outdoors, engaged in play rather than confined to an interior room. But that sense of relief is limited. On closer inspection, the playground is set on a rooftop, which suggests that mobility is still tightly restricted.\n\nThe contrast between childhood activity and the larger condition of suspension surrounding it reveals how Ellis Island organized even leisure and waiting within the same logic as immigration control. Although the playground appears soft and humane, the children are still placed in a condition of pause because their families have not yet been allowed to move on. The photograph is therefore about more than children’s activity. It is also about the architecture of waiting at the nation’s threshold.",
     altText:
-      "Black-and-white photograph by Jacob Riis, circa 1890, of a Lower East Side tenement stoop crowded with residents. Children and adults sit on worn stone steps. [Placeholder.]",
+      "A circa-1900 photograph by Jacob A. Riis of children of detained immigrants playing on a fenced rooftop playground at Ellis Island.",
   },
   {
     id: 6,
-    slug: "port-authority-bus-terminal",
-    title: "Port Authority Bus Terminal",
-    attribution: "Photograph, 1963.",
-    image: "/artifacts/06-main.svg",
-    thumbnails: ["/artifacts/06-alt-1.svg"],
+    slug: "immigrants-at-ellis-island",
+    title: "Immigrants at Ellis Island",
+    attribution:
+      "Detroit Photographic Co. Color postcard. Seymour B. Durst Old York Library Collection, Avery Library, Columbia University.",
+    image: "/artifacts/immigrants-at-ellis-island.png",
+    thumbnails: [],
     description:
-      "Port Authority was built to hide waiting from the street. Its fluorescent interiors produce a waiting without weather, a waiting that is both temporary and endlessly repeatable. The building makes no promise of arrival; only of departure. [Placeholder.]",
+      "Waiting in line at Ellis Island meant participating in a threshold condition where immigrants were not yet inside or safe. This duration was determined entirely by forces outside of their control, such as quota systems, inspections, and perceived racial category. The postcard as a mass-produced and commercially distributed image allowed The Detroit Publishing Company to sell Ellis Island as a spectacle, in turn aestheticizing an experience of discomfort. The person who bought and mailed this postcard is not in those queues yet both the view and the consumer are reproducing the power dynamic of the immigration center.",
     altText:
-      "Mid-century photograph of the Port Authority Bus Terminal main concourse, showing rows of seating beneath large departure boards and overhead signage for gates. [Placeholder.]",
+      "A color postcard published by the Detroit Photographic Co. depicting immigrants standing in long queues inside the Registry Room at Ellis Island.",
   },
   {
     id: 7,
-    slug: "welfare-office-waiting-room",
-    title: "Welfare Office Waiting Room",
-    attribution: "New York City Department of Social Services, 1974.",
-    image: "/artifacts/07-main.svg",
-    thumbnails: ["/artifacts/07-alt-1.svg"],
+    slug: "new-york-terminal-station",
+    title: "New York Terminal Station — General Waiting Room",
+    attribution:
+      "McKim, Mead & White. Photograph, April 1907. Avery Architectural & Fine Arts Library, Columbia University.",
+    image: "/artifacts/new-york-terminal-station.png",
+    thumbnails: [],
     description:
-      "The municipal waiting room is architecture's most honest diagram. Fixed seating, ticketed numbers, locked doors behind the counter. Waiting here is the price of asking, and the length of the wait is the cost of the asking. [Placeholder.]",
+      "Waiting spaces function in two registers—the prospect and refuge theory, and the Panoptic condition. The general waiting room in New York’s Penn Station is designed as an intermediary space between arrival and departure. The absence of walls and furniture in the great hall disrupts visitors’ comfort, encouraging direct movement toward the assigned train terminal, a phenomenon theorized by prospect and refuge theory. On the institutional level, the general waiting room produces a panoptic condition of surveillance as the vast open floor plan makes visibility inevitable. The hall is a spectacular display of civic excellence, a priority that seems to be at odds with the bodily experience of occupying the space.",
     altText:
-      "Documentary photograph of a 1974 New York welfare office waiting room, with rows of plastic chairs, a ticket number dispenser, and a service counter in the background. [Placeholder.]",
+      "A 1907 photograph by McKim, Mead & White of the cavernous general waiting room at Pennsylvania Station — 325 feet long, 110 feet wide, 150 feet high — with vast open floor and concourse beyond.",
   },
   {
     id: 8,
-    slug: "studio-54-line",
-    title: "Studio 54 Velvet Rope",
-    attribution: "Photograph, 1978.",
-    image: "/artifacts/08-main.svg",
-    thumbnails: ["/artifacts/08-alt-1.svg"],
+    slug: "guggenheim-reception",
+    title: "Guggenheim Reception",
+    attribution:
+      "Frank Lloyd Wright. Solomon R. Guggenheim Museum, 1943–1956. Avery Architectural and Fine Arts Library, Columbia University.",
+    image: "/artifacts/guggenheim-reception-1.jpg",
+    thumbnails: [
+      "/artifacts/guggenheim-reception-2.jpg",
+      "/artifacts/guggenheim-reception-3.jpg",
+    ],
     description:
-      "The line outside Studio 54 was the building's front door. Selection happened on the sidewalk; the interior was a reward for having been seen. The queue was not a bug in the experience but the experience itself — architecture extended twenty feet past the threshold. [Placeholder.]",
+      "The Upper East Side is part of what would become Museum Mile, and during this period was the cultural district of New York’s elite. In the same years, Black residents were being redlined out of this neighborhood. Exhibiting modernist art here in the 1940s and 50s was an act of cultural geography because Solomon R. Guggenheim was building an exhibition featuring specifically non-objective, abstract European work that required cultural literacy and paid admission to access. The drawing of the reception area and process designs of seating assume a visitor that already has the leisure to be there. The Guggenheim has also been widely criticized for the famously panopticon condition of the main rotunda, yet Wright’s sketches project the “comfortable visitor” as someone who is not hyper aware of their exposure in a predominantly white, wealthy, cultural institution. They showcase a specific social experience of waiting that presupposes the participant has already attained the standards of the institution.",
     altText:
-      "1978 photograph of the crowd and velvet rope outside Studio 54 on West 54th Street, with a doorman pointing into the crowd. [Placeholder.]",
+      "Frank Lloyd Wright’s 1943–1956 architectural drawings of the reception and café waiting areas at the Solomon R. Guggenheim Museum, showing curved planters, oval seating clusters, and visitors in the rotunda.",
   },
   {
     id: 9,
-    slug: "dmv-manhattan",
-    title: "DMV Office, Herald Square",
-    attribution: "Photograph, 1989.",
-    image: "/artifacts/09-main.svg",
-    thumbnails: ["/artifacts/09-alt-1.svg"],
+    slug: "irt-subway-contract",
+    title: "Signing of the IRT Subway Contract",
+    attribution:
+      "Photograph, c. 1900. Digitized by Columbia University Libraries; HathiTrust Digital Library.",
+    image: "/artifacts/irt-subway-contract.jpg",
+    thumbnails: [],
     description:
-      "The DMV is where the state teaches you that time is not yours. The ticket number is the only currency that matters; the chair is the only real estate. To wait here is to be processed by a room. [Placeholder.]",
+      "This photograph captures a room of suited white men signing a 35 million dollar contract to build New York City’s first subway lines. In doing so, they determine the future of NYC’s transit. Using tax dollars to build the subway station, it is critical to question which bodies this proposed plan is designed for. Those absent from the room — immigrants, people of color, working and middle class, and women — who built the physical infrastructure are, today, most dependent on public transportation. These men are responsible for determining where the line would pass through and which communities would be connected with one another. To live beyond the subway line is to determine whose mobility is less crucial. This line was the main artery that would connect the city from Brooklyn to Lower Manhattan, to Harlem, and the Bronx. It created nodes of connection and circulation to the city’s major commercial, economic, and civic centers. Which connections are worth investment? How does this homogenous group of city planners determine whose movement is worthy of acceleration and who is left waiting? Is inequality inherent?",
     altText:
-      "Photograph of a 1989 Manhattan DMV office at Herald Square, showing a crowded waiting area with a rolling number display and clerks behind a long counter. [Placeholder.]",
+      "A circa-1900 photograph showing a room of suited men gathered around a long table, signing the contract for New York City’s first IRT subway line.",
   },
   {
     id: 10,
-    slug: "emergency-room-triage",
-    title: "Bellevue Hospital Emergency Room",
-    attribution: "Photograph, 1995.",
-    image: "/artifacts/10-main.svg",
-    thumbnails: ["/artifacts/10-alt-1.svg"],
+    slug: "calling-card",
+    title: "My Calling Card",
+    attribution:
+      "Adrian Piper, My Calling Card #1, 1986 (printed card), Adrian Piper Research Archive Foundation, Berlin. Shown alongside a Columbia University Class of 1877 photograph honoring James R. Priest.",
+    image: "/artifacts/calling-card-1.jpg",
+    thumbnails: ["/artifacts/calling-card-2.jpg"],
     description:
-      "Triage is a grammar of waiting: whose emergency is urgent, whose pain can hold. The ER waiting room encodes a moral arithmetic in its seating, in its sight lines, in its proximity to the door that opens only inward. [Placeholder.]",
+      "The calling card is a form that is historically associated with bourgeois social culture as a formal notice. Adrian Piper’s work repurposes this form to describe an anticipated encounter in which a racist remark is made in a place where one believed themselves to be among their own. The last line, “I regret any discomfort my presence is causing you […]”, presents the mannerisms of this space while simultaneously showcasing that the state of waiting for such a remark is perpetual. It is placed alongside an 1877 Columbia class photograph honoring James R. Priest, one of the university’s early Black graduates. Priest is surrounded by an institution that has “extended” his entry, and the photograph holds the question of what that belonging costs.",
     altText:
-      "Photograph from 1995 of the Bellevue Hospital emergency room waiting area, with patients seated in rows and a triage nurse visible at an intake window. [Placeholder.]",
+      "Adrian Piper’s printed 1986 calling card, “My Calling Card #1,” shown alongside an 1877 Columbia University class photograph honoring James R. Priest, one of the university’s early Black graduates.",
   },
   {
     id: 11,
-    slug: "apple-store-fifth-ave-line",
-    title: "Apple Store Line, Fifth Avenue",
-    attribution: "Photograph, 2007.",
-    image: "/artifacts/11-main.svg",
-    thumbnails: ["/artifacts/11-alt-1.svg"],
+    slug: "shared-dining",
+    title: "Shared Dining",
+    attribution:
+      "Women of York Correctional Institution. Mixed media installation, 2015. Brooklyn Museum, New York. From Marking Time: Art in the Age of Mass Incarceration.",
+    image: "/artifacts/shared-dining.png",
+    thumbnails: [],
     description:
-      "The launch-day line outside the Fifth Avenue Apple Store re-frames waiting as devotion. The glass cube above is an altar; the queue around the block is a rite. Here, the wait is performed as belonging — a willingness to be seen waiting. [Placeholder.]",
+      "Women of York: “Shared Dining” was produced by incarcerated women in York Correctional Institution. The table is a place of waiting, where you are seated and wait together for a shared dining experience. The installation comprises ten place settings that celebrate a woman each artist is inspired by. Each place setting is composed using materials the artists would come across during their time in the correctional institution: plastic cutlery, paper plates, and styrofoam cups. Women of York is inspired by Judy Chicago’s Dinner Party, a piece that recognized women’s achievement and advancement. This piece recognizes the waiting voice through materials of confinement. This piece is now housed at the Brooklyn Museum; the women built, designed, and shared a table they cannot sit at.",
     altText:
-      "Photograph of a 2007 launch-day line stretching down Fifth Avenue outside the Apple Store glass cube entrance, with hundreds of people waiting beside the GM Building. [Placeholder.]",
+      "A 2015 mixed-media installation by the Women of York Correctional Institution: a long table set with ten place settings made from plastic cutlery, paper plates, and styrofoam cups, each celebrating a woman who inspired the artist.",
   },
   {
     id: 12,
-    slug: "covid-testing-tent",
-    title: "COVID Testing Tent, Times Square",
-    attribution: "Photograph, 2020.",
-    image: "/artifacts/12-main.svg",
-    thumbnails: ["/artifacts/12-alt-1.svg"],
+    slug: "archisuits",
+    title: "Archisuits",
+    attribution:
+      "Sarah Ross. Documentation photograph, 2005–2006. Avery Architectural & Fine Arts Library, Columbia University.",
+    image: "/artifacts/archisuits.jpg",
+    thumbnails: [],
     description:
-      "The sidewalk testing tent made public health into public waiting. Its painted footprints, its six-foot intervals, its plastic partitions were an emergency architecture that outlasted the emergency. Waiting, here, became a shared civic performance. [Placeholder.]",
+      "Hostile Architecture sets up purposefully uncomfortable structures across cities to prevent poor and unhoused populations from using them as resting points. The divided bench featured in Sarah Ross’ Antisuits is a design decision that positions armrests between seats to interrupt a lying body and make horizontal rest unavailable. The photograph makes clear that the design of public waiting infrastructure comes from city planning that has denied comfortable and accessible spaces to a wide range of bodies, while avoiding confrontation from law enforcement or signage. In a city where the right to pause in public is distributed unevenly across class and housing status, Ross reframes the simple act of lying down as a political proposition.",
     altText:
-      "Photograph of a 2020 COVID-19 testing tent set up in Times Square, with a line of masked people standing in taped six-foot intervals along the sidewalk. [Placeholder.]",
+      "Documentation photograph from Sarah Ross’s Archisuits (2005–2006), showing a divided public bench whose armrests interrupt the horizontal surface and prevent a body from lying across it.",
   },
 ];

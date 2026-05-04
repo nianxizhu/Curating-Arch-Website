@@ -17,7 +17,7 @@ export default function BackgroundTicker({
       <div className="flex flex-col gap-[2px] py-[2px]">
         {Array.from({ length: lines }).map((_, i) => {
           const offset = ((i * 13) % 120) - 60;
-          const speed = 55 + (i % 5) * 12;
+          const speed = 140 + (i % 5) * 28;
           const reverse = i % 2 === 1;
           return (
             <div
